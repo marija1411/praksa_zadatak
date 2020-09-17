@@ -1,0 +1,38 @@
+[
+  {
+    "VehicleMake": "BMW",
+    "VehicleModel": 128
+  },
+  {
+    "VehicleMake": "BMW",
+    "VehicleModel": "X7"
+  },
+  {
+    "VehicleMake": "BMW",
+    "VehicleModel": "X5"
+  },
+  {
+    "VehicleMake": "Ford",
+    "VehicleModel": "Fiesta"
+  },
+  {
+    "VehicleMake": "Ford",
+    "VehicleModel": "GT"
+  },
+  {
+    "VehicleMake": "Ford",
+    "VehicleModel": "Focus"
+  },
+  {
+    "VehicleMake": "Volskwagen",
+    "VehicleModel": "Golf"
+  },
+  {
+    "VehicleMake": "Volskwagen",
+    "VehicleModel": "Polo"
+  },
+  {
+    "VehicleMake": "Volskwagen",
+    "VehicleModel": "Passat"
+  }
+]

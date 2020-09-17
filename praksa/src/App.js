@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import VehicleData from "./components/VehicleData";
+import VehicleCheck from "./components/VehicleCheck";
+import TodoList from "./components/AddVehicle";
+import AddVehicle from "./components/AddVehicle";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      check: VehicleData,
+    };
+  }
+  render() {
+    const checkBox = this.state.check.map((item) => (
+      <VehicleCheck key={item.id} item={item} />
+    ));
+    return (
+      <div className="check-list">
+        <h1 className="navbar">Vehicle List</h1>
+        {checkBox}
+        <AddVehicle />
+      </div>
+    );
+  }
 }
 
 export default App;
+
+// import React from "react";
+// import VehicleMake from "./components/VehicleMake";
+// import VehicleModel from "./components/VehicleModel";
+
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <VehicleMake />
+//         <h2>Vehicle Model</h2>
+//         <VehicleModel Make="BMW" Model="128" />
+//         <VehicleModel Model="X5" />
+//         <VehicleModel Model="X7" />
+//         <VehicleModel Make="Ford" Model="Fiesta" />
+//         <VehicleModel Model="Focus" />
+//         <VehicleModel Model="GT" />
+//         <VehicleModel Make="Volskwagen" Model="Polo" />
+//         <VehicleModel Model="Passat" />
+//         <VehicleModel Model="Golf" />
+//       </div>
+//     );
+//   }
+// }
+
+// export default App

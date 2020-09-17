@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+button {
+  background-color: red;
+  border: 0;
+  color: #c7a109;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 1.5rem;
+  width: 100%;
+}
