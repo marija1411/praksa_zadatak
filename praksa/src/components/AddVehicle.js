@@ -1,27 +1,46 @@
 import React from "react";
-import VehicleList from "./VehicleList";
 
 class AddVehicle extends React.Component {
   constructor() {
     super();
-    this.state = { items: [], text: "" };
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      VehicleMake: "",
+      VehicleModel: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleClick() {
-    this.setState((prevState) => {
-      return {
-        items= { this.state.items },
-      };
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
     });
   }
 
   render() {
     return (
-      <div>
-        <h5>Insert vehicle Make and Model</h5>
-        <button onClick={this.handleClick}>Add</button>
-      </div>
+      <main>
+        <p>
+          {this.state.VehicleMake} {this.state.VehicleModel}
+        </p>
+        <form>
+          <input
+            name="VehicleMake"
+            value={this.state.VehicleMake}
+            onChange={this.handleChange}
+            placeholder="Vehicle Make"
+          />
+          <br />
+          <input
+            name="VehicleModel"
+            value={this.state.VehicleModel}
+            onChange={this.handleChange}
+            placeholder="Vehicle Model"
+          />
+          <br />
+          <button>Insert new vehicle</button>
+        </form>
+      </main>
     );
   }
 }
