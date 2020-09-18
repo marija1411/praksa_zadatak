@@ -1,7 +1,6 @@
 import React from "react";
 import VehicleData from "./components/VehicleData";
 import VehicleCheck from "./components/VehicleCheck";
-import TodoList from "./components/AddVehicle";
 import AddVehicle from "./components/AddVehicle";
 
 class App extends React.Component {
