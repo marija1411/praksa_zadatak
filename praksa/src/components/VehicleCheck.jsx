@@ -5,9 +5,7 @@ class VehicleCheck extends React.Component {
     return (
       <div className="check-list">
         <input type="checkbox" />
-        <p>
-          {this.props.item.VehicleMake} {this.props.item.VehicleModel}
-        </p>
+        {this.props.item.VehicleMake} {this.props.item.VehicleModel}
       </div>
     );
   }
