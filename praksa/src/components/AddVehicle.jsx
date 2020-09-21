@@ -1,4 +1,5 @@
 import React from "react";
+import Edit from "./Edit.jsx";
 
 class AddVehicle extends React.Component {
   constructor() {
@@ -17,40 +18,34 @@ class AddVehicle extends React.Component {
     });
   }
 
+  handleSubmit = (event) => {
+    alert(`You added: ${this.state.VehicleMake} ${this.state.VehicleModel}`);
+  };
+
   render() {
     return (
       <main>
         <p>
           {this.state.VehicleMake} {this.state.VehicleModel}
         </p>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             name="VehicleMake"
             value={this.state.VehicleMake}
             onChange={this.handleChange}
-<<<<<<< HEAD
             placeholder="VehicleMake"
-=======
-            placeholder="Vehicle Make"
->>>>>>> 1
           />
           <br />
           <input
             name="VehicleModel"
             value={this.state.VehicleModel}
             onChange={this.handleChange}
-<<<<<<< HEAD
             placeholder="VehicleModel"
           />
           <br />
-          <button>Add New Vehicle</button>
-=======
-            placeholder="Vehicle Model"
-          />
-          <br />
-          <button>Insert new vehicle</button>
->>>>>>> 1
+          <button>+ Add New Vehicle</button>
         </form>
+        <Edit />
       </main>
     );
   }
