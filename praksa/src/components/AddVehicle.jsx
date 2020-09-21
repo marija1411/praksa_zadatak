@@ -1,5 +1,4 @@
 import React from "react";
-import Edit from "./Edit.jsx";
 
 class AddVehicle extends React.Component {
   constructor() {
@@ -45,7 +44,8 @@ class AddVehicle extends React.Component {
           <br />
           <button>+ Add New Vehicle</button>
         </form>
-        <Edit />
+
+        <button>SUBMIT</button>
       </main>
     );
   }
