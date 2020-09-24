@@ -1,3 +1,5 @@
+import React from "react";
+
 const VehicleData = [
   {
     id: 1,
