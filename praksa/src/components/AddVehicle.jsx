@@ -1,52 +1,66 @@
 import React from "react";
+import VehicleList from "./VehicleList";
 
 class AddVehicle extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      VehicleMake: "",
-      VehicleModel: "",
+      items: [],
+      currentItem: {
+        text: "",
+        key: "",
+      },
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
-
-  handleChange(event) {
-    const { name, value } = event.target;
+  handleInput(e) {
     this.setState({
-      [name]: value,
+      currentItem: {
+        text: e.target.value,
+        key: Date.now(),
+      },
+    });
+  }
+  addItem(e) {
+    e.preventDefault();
+    const newItem = this.state.currentItem;
+    console.log(newItem);
+    if (newItem.text !== "") {
+      const items = [...this.state.items, newItem];
+      this.setState({
+        items: items,
+        currentItem: {
+          text: "",
+          key: "",
+        },
+      });
+    }
+  }
+  deleteItem(key) {
+    const filteredItems = this.state.items.filter((item) => item.key !== key);
+    this.setState({
+      items: filteredItems,
     });
   }
 
-  handleSubmit = (event) => {
-    alert(`You added: ${this.state.VehicleMake} ${this.state.VehicleModel}`);
-  };
-
   render() {
     return (
-      <main>
-        <p>
-          {this.state.VehicleMake} {this.state.VehicleModel}
-        </p>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            name="VehicleMake"
-            value={this.state.VehicleMake}
-            onChange={this.handleChange}
-            placeholder="VehicleMake"
-          />
-          <br />
-          <input
-            name="VehicleModel"
-            value={this.state.VehicleModel}
-            onChange={this.handleChange}
-            placeholder="VehicleModel"
-          />
-          <br />
-          <button>+ Add New Vehicle</button>
-        </form>
-
-        <button>SUBMIT</button>
-      </main>
+      <div>
+        <VehicleList items={this.state.items} deleteItem={this.deleteItem} />
+        <header>
+          <form id="add-vehicle-form" onSubmit={this.addItem}>
+            <input
+              type="text"
+              placeholder="Enter"
+              value={this.state.currentItem.text}
+              onChange={this.handleInput}
+            />
+            <button type="submit">Add</button>
+          </form>
+        </header>
+      </div>
     );
   }
 }

@@ -19,35 +19,10 @@ class App extends React.Component {
         <h1 className="navbar">Vehicle List</h1>
         {checkBox}
         <AddVehicle />
+        <button>SUBMIT</button>
       </div>
     );
   }
 }
 
 export default App;
-
-// import React from "react";
-// import VehicleMake from "./components/VehicleMake";
-// import VehicleModel from "./components/VehicleModel";
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <VehicleMake />
-//         <h2>Vehicle Model</h2>
-//         <VehicleModel Make="BMW" Model="128" />
-//         <VehicleModel Model="X5" />
-//         <VehicleModel Model="X7" />
-//         <VehicleModel Make="Ford" Model="Fiesta" />
-//         <VehicleModel Model="Focus" />
-//         <VehicleModel Model="GT" />
-//         <VehicleModel Make="Volskwagen" Model="Polo" />
-//         <VehicleModel Model="Passat" />
-//         <VehicleModel Model="Golf" />
-//       </div>
-//     );
-//   }
-// }
-
-// export default App
