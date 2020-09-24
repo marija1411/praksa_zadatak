@@ -53,7 +53,7 @@ class AddVehicle extends React.Component {
           <form id="add-vehicle-form" onSubmit={this.addItem}>
             <input
               type="text"
-              placeholder="Enter"
+              placeholder="Enter Text"
               value={this.state.currentItem.text}
               onChange={this.handleInput}
             />
